@@ -1,0 +1,39 @@
+<div *ngIf="reminder"> 
+    <form>
+      <div class="date-time-fields">
+        <mat-form-field class="full-width">
+          <mat-label>Дата и время создания</mat-label>
+          <input matInput [(ngModel)]="reminder.createdAt" type="datetime-local" name="createdAt">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Дата и время выполнения</mat-label>
+          <input matInput [(ngModel)]="reminder.completedAt" type="datetime-local" name="completedAt">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Статус</mat-label>
+          <mat-select [(ngModel)]="reminder.status.name" name="status">
+            <mat-option *ngFor="let status of statuses" [value]="status">{{status}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="full-width">
+        <mat-label>Краткое описание</mat-label>
+        <input matInput [(ngModel)]="reminder.shortDescription" name="shortDescription">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Полное описание</mat-label>
+        <textarea matInput [(ngModel)]="reminder.fullDescription" name="longDescription"></textarea> 
+      </mat-form-field>
+
+      <div class="button-container">
+        <button mat-button type="button" height="20px" (click)="save()">Сохранить</button>
+        <button mat-button> 
+          <a href="/reminders" style="text-decoration: none; color: inherit; cursor: pointer;">Назад</a>
+        </button>
+      </div>
+    </form>
+</div>

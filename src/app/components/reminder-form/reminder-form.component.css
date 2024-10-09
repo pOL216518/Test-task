@@ -1,0 +1,26 @@
+mat-form-field {
+    width: 100%;
+}
+
+
+.date-time-fields {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px; 
+}
+
+.full-width {
+    flex: 1 1 calc(33% - 16px); 
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 16px;
+}
+
+button{
+    width: 15%;
+    font-size: 20px;
+}
